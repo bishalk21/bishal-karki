@@ -1,0 +1,200 @@
+/* COLORS */
+
+:root {
+  --color-white: #ffffff;
+  --color-gray: #c4c4c4;
+  --color-black: #000000;
+  --color-purple: #8000ff;
+  --color-light-purple: rgb(207, 89, 230);
+  --color-light-blue: #6BC5F8;
+}
+
+/* FONTS */
+
+@font-face {
+  font-family: "Circular Std Book";
+  src: url("../public/fonts/CircularStd-Book.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "D-DIN Condensed";
+  src: url("../public/fonts/D-DINCondensed-Bold.woff") format("woff");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mark Pro";
+  src: url("../public/fonts/MarkPro-Heavy.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Font primary */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  /* border: solid 2px red; */
+}
+
+html {
+  /* font-size: 62.5%; */
+  font-size: 58%;
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+
+  @media only screen and (max-width: 62.5em) {
+    /* font-size: 56.25%; */
+    font-size: 51.25%;
+  }
+
+  @media only screen and (max-width: 56.25em) {
+    /* font-size: 54%; */
+    font-size: 49%;
+  }
+
+  @media only screen and (max-width: 37.5em) {
+    /* font-size: 51%; */
+    font-size: 46%;
+  }
+
+  @media only screen and (min-width: 140.5em) {
+    font-size: 75%;
+  }
+}
+
+$font-primary: "Circular Std Book",
+sans-serif;
+$font-secondary: "Mark Pro",
+sans-serif;
+$font-tertiary: "D-DIN Condensed",
+sans-serif;
+
+body {
+  font-family: $font-primary, sans-serif;
+  font-size: 1.6rem;
+  overflow-x: hidden;
+  // background: linear-gradient(115deg, #1a1e2b, #10101a, #1a1e2b, #10101a);
+  background: #10101a;
+  background-size: 400% 400%;
+  // animation: gradient 3s ease-in-out infinite alternate;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr repeat(12, minmax(min-content, 10rem)) 1fr;
+}
+
+.App {}
+
+// cursor
+.cursor {
+  width: 8rem;
+  height: 8rem;
+  position: absolute;
+  top: 40%;
+  right: 20%;
+  pointer-events: none;
+  transition: left top 0.1s ease-in-out;
+  z-index: 1233333;
+  // background-image: url("../public/svg/cursor.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: cursorAnim 10s infinite linear;
+
+  @media only screen and (max-width: 52.5em) {
+    opacity: 0;
+  }
+}
+
+// preloader
+.preloader {
+  width: 100vw;
+  height: 100vh;
+  background-color: #10101a;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 129993994;
+  display: grid;
+  place-content: center;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__left {
+    margin-right: 1rem;
+  }
+
+  &__right {
+    margin-left: 1rem;
+    width: max-content;
+    height: 4rem;
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+      content: "";
+      display: block;
+      height: 100%;
+      width: 100%;
+      background-image: linear-gradient(to bottom,
+          #10101a 5%,
+          rgba(#10101a, 0) 30%);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      height: 100%;
+      width: 100%;
+      background-image: linear-gradient(to top,
+          #10101a 5%,
+          rgba(#10101a, 0) 30%);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+  }
+
+  &__text {
+    font-family: $font-tertiary;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 210%;
+    letter-spacing: 0.19em;
+    color: var(--color-white);
+    animation: preloaderTextAnim 12s linear;
+    animation-delay: 3s;
+  }
+}
+
+@keyframes preloaderTextAnim {
+  0% {
+    transform: translateY(0%);
+  }
+
+  50%,
+  100% {
+    transform: translateY(-600%);
+  }
+}
