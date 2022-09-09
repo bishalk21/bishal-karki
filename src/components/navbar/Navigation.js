@@ -2,7 +2,9 @@ import * as React from "react";
 import { motion } from "framer-motion";
 import { MenuToggle } from "./MenuToggle";
 import { MobileNavigation } from "./MobileNavigation";
-import Link from "next/link";
+import { Link } from "react-router-dom";
+import me1 from "../../assets/svg/me1.svg";
+import mee from "../../assets/svg/mee.svg";
 
 const variants = {
   open: {
@@ -38,18 +40,18 @@ export const Navigation = ({ isOpen, toggleOpen }) => {
         data-scroll-target="#menu-target"
         className="menu-top"
       >
-        <Link href="/">
+        <Link to="/">
           <a className="brand-logo">
             <img
               className="brand-logo__icon"
-              src="svg/me.svg"
-              alt="adeola logo icon"
+              src={me1}
+              alt="bishal logo icon"
             />
             <span className="brand-logo__text-wrapper">
               <img
                 className="brand-logo__text"
-                src="svg/mee.svg"
-                alt="adeola logo text"
+                src={mee}
+                alt="bishal logo text"
               />
               {/* name */}
             </span>

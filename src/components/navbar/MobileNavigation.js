@@ -1,5 +1,8 @@
 import * as React from "react";
 import { motion } from "framer-motion";
+import ft2 from "../../assets/svg/ft2.png";
+import ntd from "../../assets/svg/ntfl.png";
+import calc from "../../assets/svg/calculator.png";
 
 const openTransition = {
   duration: 1.1,
@@ -87,6 +90,7 @@ export const MobileNavigation = ({ variants, isOpen }) => (
             target="_blank"
             rel="nofollow noopener noreferrer"
           >
+            <i class="fas fa-envelope"></i> {"  "}
             Tell me about it
           </a>
         </div>
@@ -108,12 +112,8 @@ export const MobileNavigation = ({ variants, isOpen }) => (
             href="https://my-finance-tracker.herokuapp.com/"
             className="navigation-bottom__projects-card"
           >
-            <img src="webp/financetracker.png" alt="My Finance Tracker" />
-            <h2>
-              My Finance
-              <br />
-              Tracker
-            </h2>
+            <img src={ft2} alt="My Finance Tracker" />
+            <h2>My Finance Tracker</h2>
           </a>
           <a
             href="https://not-to-do-list-app.herokuapp.com/"
@@ -121,7 +121,7 @@ export const MobileNavigation = ({ variants, isOpen }) => (
             rel="noopener"
             className="navigation-bottom__projects-card"
           >
-            <img src="webp/nottodo.png" alt="Not To Do List" />
+            <img src={ntd} alt="Not To Do List" />
             <h2>Not To Do List</h2>
           </a>
           <a
@@ -130,12 +130,8 @@ export const MobileNavigation = ({ variants, isOpen }) => (
             rel="noopener"
             className="navigation-bottom__projects-card"
           >
-            <img src="webp/calculator.png" alt="Prank Calculator" />
-            <h2>
-              Prank
-              <br />
-              Calculator
-            </h2>
+            <img src={calc} alt="Prank Calculator" />
+            <h2>Prank Calculator</h2>
           </a>
         </div>
       </motion.div>

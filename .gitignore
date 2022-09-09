@@ -13,6 +13,7 @@
 # misc
 .DS_Store
 *.pem
+text
 
 # debug
 npm-debug.log*
