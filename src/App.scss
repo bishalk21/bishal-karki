@@ -483,6 +483,7 @@ html.has-scroll-dragging {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 
   }
 
@@ -531,6 +532,51 @@ html.has-scroll-dragging {
         font-family: $font-primary;
       }
     }
+
+    @media screen and (max-width: 57em) {
+      margin-top: 10rem;
+      @include centerContent;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+
+      &-card {
+        margin-bottom: 5rem;
+        min-width: 30rem;
+        min-height: 47rem;
+        // position: relative;
+
+
+        &:not(:last-child) {
+          margin-right: 4rem;
+        }
+
+        &:hover {
+          width: 40.5rem;
+          height: 32.8rem;
+        }
+
+        img {
+          border-radius: 4.0rem;
+          height: 100%;
+          width: 100%;
+          object-fit: fill;
+          transition: all 0.3s ease-in-out;
+        }
+
+        h2 {
+          text-align: center;
+          color: var(--color-white);
+          position: absolute;
+          top: -7%;
+          left: 10%;
+          font-family: $font-primary;
+        }
+      }
+    }
+
   }
 }
 
