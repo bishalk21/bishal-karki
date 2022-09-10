@@ -58,28 +58,28 @@ export const MobileNavigation = ({ variants, isOpen }) => (
               rel="noopener"
               target="_blank"
             >
-              👾 GH
+              <i className="fab fa-github"></i> GH
             </a>
             <a
               href="https://twitter.com/k_bishal21"
               rel="noopener"
               target="_blank"
             >
-              🐦 TW
+              <i className="fab fa-twitter"></i> TW
             </a>
             <a
               href="https://www.linkedin.com/in/bishalk21/"
               rel="noopener"
               target="_blank"
             >
-              💼 LD
+              <i className="fab fa-linkedin"></i> LI
             </a>
             <a
               href="https://www.instagram.com/k_bishal02/"
               rel="noopener"
               target="_blank"
             >
-              📸 IN
+              <i className="fab fa-instagram"></i> IG
             </a>
           </div>
         </div>
